@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Luas Persegi Panjang</h1>
+        <p>Masukkan panjang dan lebar untuk menghitung luas persegi panjang:</p>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="panjang" placeholder="Panjang">
+            </div>
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="lebar" placeholder="Lebar">
+            </div>
+            <div class="form-group col-md-4">
+                <button class="btn btn-primary" onclick="hitungLuas()">Hitung</button>
+            </div>
+        </div>
+        <p id="hasilLuas"></p>
+    </div>
+
+    <script>
+        function hitungLuas() {
+            var panjang = parseFloat(document.getElementById("panjang").value);
+            var lebar = parseFloat(document.getElementById("lebar").value);
+
+            if (!isNaN(panjang) && !isNaN(lebar)) {
+                var luas = panjang * lebar;
+                document.getElementById("hasilLuas").textContent = "Luas Persegi Panjang: " + luas;
+            } else {
+                document.getElementById("hasilLuas").textContent = "Masukkan angka yang valid.";
+            }
+        }
+    </script>
+
+    <div class="container">
+        <h1>Pemeriksaan Angka</h1>
+        <p>Masukkan angka untuk memeriksa apakah itu positif, negatif, atau nol:</p>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="angka" placeholder="Angka">
+            </div>
+            <div class="form-group col-md-4">
+                <button class="btn btn-primary" onclick="periksaAngka()">Periksa</button>
+            </div>
+        </div>
+        <p id="hasilPemeriksaan"></p>
+    </div>
+
+    <script>
+        function periksaAngka() {
+            var angka = parseFloat(document.getElementById("angka").value);
+
+            if (!isNaN(angka)) {
+                if (angka > 0) {
+                    document.getElementById("hasilPemeriksaan").textContent = angka + " adalah angka positif.";
+                } else if (angka < 0) {
+                    document.getElementById("hasilPemeriksaan").textContent = angka + " adalah angka negatif.";
+                } else {
+                    document.getElementById("hasilPemeriksaan").textContent = angka + " adalah nol.";
+                }
+            } else {
+                document.getElementById("hasilPemeriksaan").textContent = "Masukkan angka yang valid.";
+            }
+        }
+    </script>
+    <!-- Add Bootstrap JS and Popper.js scripts here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
